@@ -1,5 +1,6 @@
 package com.example.contadoralternativo
 
+import android.content.pm.ActivityInfo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -28,13 +30,15 @@ class MainActivity : AppCompatActivity() {
         boton?.setOnClickListener(object : View.OnClickListener {
 
             override fun onClick(v: View?) {
-
-
-
+                var nombre = entradaUsuario!!.getText().toString()
                 contadorNuevo +=1
-                texto?.append("usuario!!  boton se ha clickeado $contadorNuevo vez")
 
-                Toast.makeText(this@MainActivity,"se clickeo el boton",Toast.LENGTH_SHORT).show()
+                if(contadorNuevo>=2) {
+                    texto?.append("\n\r"+"El usuario: "+nombre+"!! ha clickeado $contadorNuevo veces")
+                }else{
+                    texto?.append("\n\r"+"El usuario: "+nombre+"!! ha clickeado $contadorNuevo vez")}
+                if (contadorNuevo==10)
+                    Toast.makeText(this@MainActivity,"El boton se ha clickeado 10 veces",Toast.LENGTH_SHORT).show()
 
 
             }

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ContadorAlternativo</string>
+    <string name="tv2">Desarrollado por: Favio Quispe</string>
+    <string name="tv1"></string>
 </resources>
